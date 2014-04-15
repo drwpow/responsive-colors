@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      width: 100%;
+    }
+    body {
+      -webkit-transform: translateY(-50%);
+      -webkit-transition: all 100ms ease;
+      font: 700 400%/1 sans-serif;
+      height: auto;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transition: all 100ms ease;
+      vertical-align: middle;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function colorBG() {
+      var r = Math.ceil(Math.random()*255);
+      var g = Math.ceil(Math.random()*255);
+      var b = Math.ceil(Math.random()*255);
+      var c = 'rgb(' + r + ',' + g + ',' + b  + ')';
+      var s = Math.ceil(Math.random()*96)
+      $('body')
+        .css({
+          'background-color': c,
+          'font-size': s + 'px'
+        })
+        .html(c)
+    }
+    $(window).resize(colorBG);
+    $(document).ready(colorBG);
+  </script>
+</body>
+</html>
